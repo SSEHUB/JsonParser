@@ -1,9 +1,13 @@
 JsonParser
 ==========
 
+![Build Status](https://jenkins-2.sse.uni-hildesheim.de/buildStatus/icon?job=Misc_JsonParser "Build Status")
+
 A simple JSON Parser written in Java without any dependencies.
 
 ## Usage
+
+Download: [Latest CI Build](https://jenkins-2.sse.uni-hildesheim.de/job/Misc_JsonParser/lastSuccessfulBuild/artifact/build/)
 
 The JSON data structure inherits from the abstract class `net.ssehub.json.JsonElement`.
 Implement `net.ssehub.json.JsonVisitor` for traversal using the visitor pattern.
