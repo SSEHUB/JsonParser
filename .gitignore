@@ -1,1 +1,4 @@
 /build/
+
+# maven generates this from the POM
+.checkstyle

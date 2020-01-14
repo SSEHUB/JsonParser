@@ -15,7 +15,6 @@
  */
 package net.ssehub.json;
 
-import java.io.BufferedReader;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
@@ -46,7 +45,8 @@ public class JsonParser implements Closeable {
     private int currentNestingDepth;
 
     /**
-     * Creates a parser for the given input stream. Internally, the stream will be wrapped in a {@link BufferedReader}.
+     * Creates a parser for the given input stream. Internally, the stream will be wrapped in a
+     * {@link java.io.BufferedReader}.
      * 
      * @param in The input stream. Not <code>null</code>.
      */
