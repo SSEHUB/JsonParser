@@ -16,6 +16,13 @@
 		<url>https://sse.uni-hildesheim.de/</url>
 	</organization>
 
+	<licenses>
+		<license>
+			<name>Apache-2.0</name>
+			<url>https://www.apache.org/licenses/LICENSE-2.0.html</url>
+		</license>
+	</licenses>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -74,7 +81,7 @@
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.5</version>
-				
+
 				<executions>
 					<execution>
 						<goals>
