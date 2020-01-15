@@ -10,6 +10,7 @@
 
 	<name>JsonParser</name>
 	<url>https://github.com/SSEHUB/JsonParser</url>
+	<description>A simple JSON Parser written in Java without any dependencies.</description>
 
 	<organization>
 		<name>Software Systems Engineering, University of Hildesheim</name>
