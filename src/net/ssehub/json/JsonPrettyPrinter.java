@@ -96,7 +96,7 @@ public class JsonPrettyPrinter implements JsonVisitor<String> {
 
     @Override
     public String visitNumber(JsonNumber number) {
-        return String.valueOf(number.getValue());
+        return JsonNumber.jsonEscape(number.getValue());
     }
 
     @Override

@@ -40,9 +40,31 @@ public class JsonNumber extends JsonValue<Number> {
         return value;
     }
     
+    /**
+     * "Escapes" the given number so that it is JSON compatible. This method handles Infinity and NaN by returning
+     * a string containing <code>null</code>.
+     * 
+     * @param number The number to "escape". Not <code>null</code>.
+     * 
+     * @return The properly "escaped" number. Never <code>null</code>.
+     */
+    public static String jsonEscape(Number number) {
+        String result;
+        
+        double dValue = number.doubleValue();
+        if (Double.isInfinite(dValue) || Double.isNaN(dValue)) {
+            // infinity and NaN are not allowed in JSON
+            result = "null";
+        } else {
+            result = number.toString();
+        }
+        
+        return result;
+    }
+    
     @Override
     public String toString() {
-        return value.toString();
+        return jsonEscape(value);
     }
 
     @Override

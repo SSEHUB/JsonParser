@@ -44,10 +44,12 @@ public class JsonToStringTest {
         assertThat(new JsonNumber(42.2345E-2).toString(), is("0.422345"));
         assertThat(new JsonNumber(-42.2345E-2).toString(), is("-0.422345"));
         
-        // TODO: what to do about these?
-        assertThat(new JsonNumber(Double.POSITIVE_INFINITY).toString(), is("Infinity"));
-        assertThat(new JsonNumber(Double.NEGATIVE_INFINITY).toString(), is("-Infinity"));
-        assertThat(new JsonNumber(Double.NaN).toString(), is("NaN"));
+        assertThat(new JsonNumber(Double.POSITIVE_INFINITY).toString(), is("null"));
+        assertThat(new JsonNumber(Double.NEGATIVE_INFINITY).toString(), is("null"));
+        assertThat(new JsonNumber(Double.NaN).toString(), is("null"));
+        assertThat(new JsonNumber(Float.POSITIVE_INFINITY).toString(), is("null"));
+        assertThat(new JsonNumber(Float.NEGATIVE_INFINITY).toString(), is("null"));
+        assertThat(new JsonNumber(Float.NaN).toString(), is("null"));
         
         assertThat(new JsonString("Hello World!").toString(), is("\"Hello World!\""));
         assertThat(new JsonString("A \" B").toString(), is("\"A \\\" B\""));
@@ -115,10 +117,9 @@ public class JsonToStringTest {
         assertThat(new JsonNumber(42.2345E-2).accept(p), is("0.422345"));
         assertThat(new JsonNumber(-42.2345E-2).accept(p), is("-0.422345"));
         
-        // TODO: what to do about these?
-        assertThat(new JsonNumber(Double.POSITIVE_INFINITY).accept(p), is("Infinity"));
-        assertThat(new JsonNumber(Double.NEGATIVE_INFINITY).accept(p), is("-Infinity"));
-        assertThat(new JsonNumber(Double.NaN).accept(p), is("NaN"));
+        assertThat(new JsonNumber(Double.POSITIVE_INFINITY).accept(p), is("null"));
+        assertThat(new JsonNumber(Double.NEGATIVE_INFINITY).accept(p), is("null"));
+        assertThat(new JsonNumber(Double.NaN).accept(p), is("null"));
         
         assertThat(new JsonString("Hello World!").accept(p), is("\"Hello World!\""));
         assertThat(new JsonString("A \" B").accept(p), is("\"A \\\" B\""));
