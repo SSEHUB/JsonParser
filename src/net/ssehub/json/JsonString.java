@@ -15,6 +15,7 @@
  */
 package net.ssehub.json;
 
+import java.util.Locale;
 import java.util.Objects;
 
 /**
@@ -102,7 +103,12 @@ public class JsonString extends JsonValue<String> {
                 break;
                 
             default:
-                result.append(c);
+                if (c < 0x20) {
+                    // control characters < 0x20 (space) need to be escaped
+                    result.append(String.format((Locale) null, "\\u%04x", (int) c));
+                } else {
+                    result.append(c);
+                }
                 break;
             }
         }

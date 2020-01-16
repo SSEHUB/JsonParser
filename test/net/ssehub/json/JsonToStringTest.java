@@ -57,6 +57,7 @@ public class JsonToStringTest {
         assertThat(new JsonString("A \r B").toString(), is("\"A \\r B\""));
         assertThat(new JsonString("A \t B").toString(), is("\"A \\t B\""));
         assertThat(new JsonString("A \f B").toString(), is("\"A \\f B\""));
+        assertThat(new JsonString("A \u0006 B").toString(), is("\"A \\u0006 B\""));
     }
     
     /**
